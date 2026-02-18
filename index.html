@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="aprendiz"></p>
+
+<script>
+      fetch("http://localhost:3000/deisy")
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("aprendiz").textContent = data.nombre;  
+        document.getElementById("aprendiz").textContent = data.formacion;
+        document.getElementById("aprendiz").textContent = data.centro;  
+    });
+</script>
+
+</body>
+</html>
