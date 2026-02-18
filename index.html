@@ -1,21 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<html>
 <body>
-    <p id="aprendiz"></p>
+
+<h2>Aprendiz</h2>
+<p id="nombreAprendiz"></p>
+<p id="formacion"></p>
+<p id="centro"></p>
+
+<h2>Usuario</h2>
+<p id="nombreUsuario"></p>
+<p id="rol"></p>
+<p id="activo"></p>
 
 <script>
-      fetch("http://localhost:3000/deisy")
-    .then(res => res.json())
-    .then(data => {
-        document.getElementById("aprendiz").textContent = data.nombre;  
-        document.getElementById("aprendiz").textContent = data.formacion;
-        document.getElementById("aprendiz").textContent = data.centro;  
-    });
+
+// 🔹 Traer aprendiz
+fetch("http://localhost:3000/deisy")
+.then(res => res.json())
+.then(data => {
+    document.getElementById("nombreAprendiz").textContent = data.nombre;
+    document.getElementById("formacion").textContent = data.formacion;
+    document.getElementById("centro").textContent = data.centro;
+});
+
+// 🔹 Traer usuario
+fetch("http://localhost:3000/usuario")
+.then(res => res.json())
+.then(data => {
+    document.getElementById("nombreUsuario").textContent = data.nombre;
+    document.getElementById("rol").textContent = data.rol;
+    document.getElementById("activo").textContent = data.activo;
+});
+
 </script>
 
 </body>
